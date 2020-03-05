@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<!-- 1 task -->
+	<script>
+		var text = "првет мир";
+		document.write(text);
+		var numWords = "Количество слов:" + text.split(" ").length;
+		var alph = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+		var numLetters = 0; 
+
+		for (var i in text) 
+		{ 
+			if (alph.includes(text[i].toLowerCase())) 
+			{
+				numLetters++;
+			}
+		}
+
+		var numWordsText = "Количество букв: " + numLetters;
+		text = "<br>" + numWords + "<br>" + numWordsText + "<br>";
+		document.write(text);
+		var locationText = "Адрес документа: ";
+		var protocol = "<font color='brown'>" + document.location.protocol + "</font>";
+		var path = document.location.pathname;
+		var name = "<font color='blue'>" + path.slice(path.lastIndexOf("/") + 1, path.lastIndexOf(".")) + "</font>";
+		var ext = "<font color='orange'>" + path.slice(path.lastIndexOf(".") + 1) + "</font>";
+		path = path.slice(0, path.lastIndexOf("/") + 1);
+		locationText += protocol + path + name + "." + ext
+		document.write(locationText);
+
+	</script>
+<!-- 2 task -->
+	<body>
+
+		<br>
+		<br>
+		<a href="#p2" id="anchor">Pics bottom</a>
+		<p id="p1">Ссылки:</p>
+		<a href="https://www.google.com">Google</a>
+		<br><a href="https://yandex.ru/">Yandex</a>
+		<br>
+		<br><img id="pic1" src="pic1.png" width="300" height="300" alt="Pic 1">
+		<br><img id="pic2" src="pic2.jpg" width="300" height="300" alt="Pic 2">
+		<br>
+		<a href="#p1" id="anchor">Back to links</a>
+		<p id="p2">Тут</p>
+
+		<script>
+			function writeText(text) {
+				document.write(text);
+			}
+
+			var anchors = document.getElementsByTagName("a");
+			var count = 0;
+			for (var i in anchors) 
+			{
+				if (anchors[i].id == "anchor") {
+					count++;
+				}
+			}
+
+			writeText("Количество анкоров в документе: " + count);
+			count = anchors.length - count;
+			writeText("<br>Количество ссылок в документе: " + count);
+			var anchorText = document.getElementById('p1').innerHTML;
+			writeText('<br>Текст первого анкора: "' + anchorText + '"');
+			count = document.getElementsByTagName("img").length;
+			writeText("<br>Количество картинок в документе: " + count);
+			var width1 = document.getElementById('pic1').clientWidth;
+			var width2 = document.getElementById('pic2').clientWidth;
+			writeText("<br>Ширина первой картинки: " + width1);
+			writeText("<br> Ширина самой широкой картинки: " + Math.max(width1, width2));
+
+			function sum() {
+	  			var result = 0;
+	  			for (var i = 0; i < arguments.length; i++) {
+	    			result += arguments[i];
+	  			}
+	  			return result;
+			}
+
+			var height1 = document.getElementById('pic1').clientHeight;
+			var height2 = document.getElementById('pic2').clientHeight;
+			writeText("<br> Сумма всех высот картинок: " + sum(height1, height2));
+		</script>
+	<!-- 3 task -->
+
+		<br>
+		<br>
+		<p>1 form</p>
+		<form id="form1" name="form 1">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>2 form</p>
+		<form id="form2" name="form 2">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>3 form</p>
+		<form id="form3" name="form 3">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>4 form</p>
+		<form id="form4" name="form 4">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>5 form</p>
+		<form id="form5" name="form 5">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>6 form</p>
+		<form id="form6" name="form 6">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>7 form</p>
+		<form id="form7" name="form 7">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>8 form</p>
+		<form id="form8" name="form 8">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>9 form</p>
+		<form id="form9" name="form 9">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>
+		<br>
+		<p>10 form</p>
+		<form id="form10" name="form 10">
+			<p><input type="text" value="name"></p>
+			<p><input type="email" value="email@gmail.com"></p>
+			<p><input type="password" value="password"></p>
+   			<p><input type="button" id="showNameButton" value="Показать текст кнопки" onclick="showText(this.getAttribute('value'))"></p>
+   			<p><input type="button" id="showFormIdButton" value="Принадлежность" onclick="showText(this.form.getAttribute('id'))"></p>
+   			<p><input type="button" id="resetButton"value="Сбросить" onclick="resetForm(this.form)"></p>
+   			<p><input type="button" id="showCountButton" value="Показать количество полей" onclick="showFieldsCount(this.form)"></p>
+		</form>	
+
+		<script>
+			var formNames = document.getElementsByTagName("form");
+			var formNamesText = "<br>Имена четных форм: ";
+			for (var i in formNames)
+			{
+				if (i % 2 == 1)
+				{
+					formNamesText += formNames[i].getAttribute("name") + ", ";
+				}
+			}
+			document.write(formNamesText);
+
+			function showText(text) {
+				alert(text);
+			}
+
+			function resetForm(form) {
+				var inputs = form.getElementsByTagName("input");
+				for (var i in inputs) {
+					if (inputs[i].type != null && inputs[i].type != "button") {
+						inputs[i].value = "";
+					}
+				}
+			}
+
+			function showFieldsCount(form) {
+				var inputs = form.getElementsByTagName("input");
+				var count = 0;
+				for (var i in inputs) {
+					if (inputs[i].type != null && inputs[i].type != "button") {
+						count++;
+					}
+				}
+				var text = "Количество полей: " + count;
+				alert(text);
+			}
+
+		</script>
+
+
+	</body>
+</html>
