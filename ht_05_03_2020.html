@@ -39,8 +39,8 @@
 		<a href="https://www.google.com">Google</a>
 		<br><a href="https://yandex.ru/">Yandex</a>
 		<br>
-		<br><img id="pic1" src="pic1.png" width="300" height="300" alt="Pic 1">
-		<br><img id="pic2" src="pic2.jpg" width="300" height="300" alt="Pic 2">
+		<br><img id="pic1" src="pic1.png" width="200" height="200" alt="Pic 1">
+		<br><img id="pic2" src="pic2.jpg" width="450" height="450" alt="Pic 2">
 		<br>
 		<a href="#p1" id="anchor">Back to links</a>
 		<p id="p2">Тут</p>
@@ -68,8 +68,15 @@
 			writeText("<br>Количество картинок в документе: " + count);
 			var width1 = document.getElementById('pic1').clientWidth;
 			var width2 = document.getElementById('pic2').clientWidth;
-			writeText("<br>Ширина первой картинки: " + width1);
-			writeText("<br> Ширина самой широкой картинки: " + Math.max(width1, width2));
+			var pictures = document.getElementsByTagName("img");
+			writeText("<br>Ширина первой картинки: " + pictures[0].clientWidth);
+			var maxWidth=0;
+			for (var i = 0; i < pictures.length; i++) {
+	    			if (pictures[i].clientWidth > maxWidth) {
+					maxWidth=pictures[i].clientWidth;
+				}
+	  			}
+			writeText("<br> Ширина самой широкой картинки: " + maxWidth);
 
 			function sum() {
 	  			var result = 0;
