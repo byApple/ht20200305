@@ -1,0 +1,59 @@
+input.showNameButton{
+    background: url(icon1.png) no-repeat;
+    background-position: left 5px center;
+ 	border: 1px solid gray;
+	padding: 10px 25px;
+	border-radius: 10px;
+	margin: 0px 2px;
+	cursor: pointer;
+	padding-left: 30px;
+}
+
+input.showNameButton:hover {
+  background-color: #33CCFF;
+}
+
+input.showFormIdButton{
+    background: url(icon2.png) no-repeat;
+    background-position: left 5px center;
+ 	border: 1px solid gray;
+	padding: 10px 25px;
+	border-radius: 10px;
+	margin: 0px 2px;
+	cursor: pointer;
+	padding-left: 30px;
+}
+
+input.showFormIdButton:hover {
+  background-color: #669999;
+}
+
+input.resetButton{
+    background: url(icon5.png) no-repeat;
+    background-position: left 5px center;
+ 	border: 1px solid gray;
+	padding: 10px 25px;
+	border-radius: 10px;
+	margin: 0px 2px;
+	cursor: pointer;
+	padding-left: 30px;
+}
+
+input.resetButton:hover {
+  background-color: #FF0066;
+}
+
+input.showCountButton{
+    background: url(icon3.png) no-repeat;
+    background-position: left 5px center;
+ 	border: 1px solid gray;
+	padding: 10px 25px;
+	border-radius: 10px;
+	margin: 0px 2px;
+	cursor: pointer;
+	padding-left: 30px;
+}
+
+input.showCountButton:hover {
+  background-color: #6666FF;
+}
