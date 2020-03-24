@@ -216,11 +216,13 @@
 			}
 			document.write(formNamesText);
 
-			function showText(text) {
+			function showText(text) 
+			{
 				alert(text);
 			}
 
-			function resetForm(form) {
+			function resetForm(form) 
+			{
 				var inputs = form.getElementsByTagName("input");
 				for (var i in inputs) {
 					if (inputs[i].type != null && inputs[i].type != "button") {
@@ -229,7 +231,8 @@
 				}
 			}
 
-			function showFieldsCount(form) {
+			function showFieldsCount(form) 
+			{
 				var inputs = form.getElementsByTagName("input");
 				var count = 0;
 				for (var i in inputs) {
